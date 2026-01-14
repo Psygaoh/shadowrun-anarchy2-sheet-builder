@@ -1,16 +1,16 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { HeaderComponent } from './core/ui/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [HeaderComponent, RouterOutlet],
   template: `
-    <h1>Hello, {{ title() }}</h1>
-
+    <app-header />
     <router-outlet />
   `,
   styles: [],
 })
 export class App {
-  protected readonly title = signal('shadowrun-anarchy2-sheet-builder');
 }
