@@ -1,0 +1,295 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "identity": {
+    "streetName": "Capitán",
+    "legalName": "Gustavo Araya",
+    "metatype": "DWARF",
+    "archetype": "Face militaire",
+    "keywords": ["Nain", "Amazonie", "Face", "Mercenaire", "Train de vie bas"],
+    "behaviors": [
+      "Social : favorise l’entraide et la protection du groupe",
+      "Conciliant : évite la confrontation tant que possible",
+      "Tourne tout en dérision pour détendre l’atmosphère",
+      "Déteste la magie du sang, les Azzies et d’être confondu avec l’un d’entre eux"
+    ],
+    "catchphrases": [
+      "La fin ne justifie pas tous les moyens",
+      "Je suis sûr que l’on peut régler cela en gens civilisés",
+      "Comment on s’en sort ? En rangs serrés et tirs groupés.",
+      "Me cago en tu puta estirpe, cabrón!"
+    ]
+  },
+  "attributes": {
+    "values": {
+      "FORCE": 3,
+      "AGILITY": 3,
+      "VOLONTE": 3,
+      "LOGIQUE": 2,
+      "CHARISME": 4
+    }
+  },
+  "skills": {
+    "byName": {
+      "ARMES_A_DISTANCE": {
+        "name": "ARMES_A_DISTANCE",
+        "rating": 5,
+        "linkedAttribute": "AGILITY",
+        "specializations": []
+      },
+      "ATHLETISME": {
+        "name": "ATHLETISME",
+        "rating": 3,
+        "linkedAttribute": "FORCE",
+        "specializations": [
+          { "name": "défense à distance", "bonus": 2 }
+        ]
+      },
+      "COMBAT_RAPPROCHE": {
+        "name": "COMBAT_RAPPROCHE",
+        "rating": 4,
+        "linkedAttribute": "AGILITY",
+        "specializations": []
+      },
+      "FURTIVITE": {
+        "name": "FURTIVITE",
+        "rating": 4,
+        "linkedAttribute": "AGILITY",
+        "specializations": [
+          { "name": "discrétion physique", "bonus": 2 }
+        ]
+      },
+      "INFLUENCE": {
+        "name": "INFLUENCE",
+        "rating": 4,
+        "linkedAttribute": "CHARISME",
+        "specializations": [
+          { "name": "négociation", "bonus": 2 }
+        ]
+      },
+      "PERCEPTION": {
+        "name": "PERCEPTION",
+        "rating": 4,
+        "linkedAttribute": "LOGIQUE",
+        "specializations": []
+      },
+      "RESEAU": {
+        "name": "RESEAU",
+        "rating": 3,
+        "linkedAttribute": "CHARISME",
+        "specializations": []
+      },
+      "SURVIE": {
+        "name": "SURVIE",
+        "rating": 5,
+        "linkedAttribute": "LOGIQUE",
+        "specializations": [
+          { "name": "sang-froid", "bonus": 2 }
+        ]
+      }
+    }
+  },
+  "resources": {
+    "cash": null,
+    "anarchyCurrent": null,
+    "anarchyMaxBase": 3,
+    "essenceCurrent": 6,
+    "essenceMax": 6
+  },
+  "qualities": {
+    "all": [
+      {
+        "name": "Éveillé : adepte",
+        "source": "trait",
+        "level": 1,
+        "essenceCost": 0,
+        "modifiers": [],
+        "notes": []
+      },
+      {
+        "name": "Esprit mentor : Capybara",
+        "source": "trait",
+        "level": 0,
+        "essenceCost": 0,
+        "modifiers": [
+          {
+            "type": "RISK_REDUCTION",
+            "value": 1,
+            "appliesTo": {
+              "skill": "SURVIE",
+              "specialization": "sang-froid",
+              "attribute": null
+            }
+          },
+          {
+            "type": "RISK_REDUCTION",
+            "value": 1,
+            "appliesTo": {
+              "skill": "FURTIVITE",
+              "specialization": "discrétion physique",
+              "attribute": null
+            }
+          }
+        ],
+        "notes": [
+          {
+            "label": "Comportement associé",
+            "text": "Social : favorise l’entraide et la protection du groupe"
+          }
+        ]
+      },
+      {
+        "name": "Contrôle vocal",
+        "source": "pouvoir d'adepte",
+        "level": 0,
+        "essenceCost": 0,
+        "modifiers": [
+          {
+            "type": "RISK_REDUCTION",
+            "value": 1,
+            "appliesTo": {
+              "skill": "INFLUENCE",
+              "specialization": null,
+              "attribute": null
+            }
+          },
+          {
+            "type": "RISK_REDUCTION",
+            "value": 1,
+            "appliesTo": {
+              "skill": "INFLUENCE",
+              "specialization": "imposture",
+              "attribute": null
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "name": "Sens du combat",
+        "source": "pouvoir d'adepte",
+        "level": 0,
+        "essenceCost": 0,
+        "modifiers": [
+          {
+            "type": "RISK_REDUCTION",
+            "value": 1,
+            "appliesTo": {
+              "skill": "COMBAT_RAPPROCHE",
+              "specialization": null,
+              "attribute": null
+            }
+          },
+          {
+            "type": "RISK_REDUCTION",
+            "value": 1,
+            "appliesTo": {
+              "skill": "ATHLETISME",
+              "specialization": "défense à distance",
+              "attribute": null
+            }
+          }
+        ],
+        "notes": []
+      },
+      {
+        "name": "Sens du danger",
+        "source": "pouvoir d'adepte",
+        "level": 0,
+        "essenceCost": 0,
+        "modifiers": [],
+        "notes": [
+          {
+            "label": "Effet",
+            "text": "Permet de ressentir un danger imminent, sans test de Perception, mais sans détail."
+          }
+        ]
+      },
+      {
+        "name": "Fusil d’assaut AK-97",
+        "source": "équipement",
+        "level": 0,
+        "essenceCost": 0,
+        "modifiers": [],
+        "notes": [
+          { "label": "Détail", "text": "Baïonnette démontable" }
+        ]
+      }
+    ]
+  },
+  "inventory": {
+    "items": [
+      { "name": "Faux SIN", "category": "SIN", "tags": [], "modifiers": [], "value": null },
+      { "name": "Commlink", "category": "COMMLINK", "tags": [], "modifiers": [], "value": null },
+      { "name": "Médikit", "category": "GENERAL", "tags": [], "modifiers": [], "value": null },
+      {
+        "name": "Veste pare-balle",
+        "category": "ARMOR",
+        "tags": [{ "label": "Armure", "text": "3" }],
+        "modifiers": [],
+        "value": null
+      },
+      { "name": "Mains nues", "category": "WEAPON", "tags": [], "modifiers": [], "value": null },
+      {
+        "name": "Colt Manhunter",
+        "category": "WEAPON",
+        "tags": [
+          { "label": "Type", "text": "pistolet lourd" },
+          { "label": "VD", "text": "5" }
+        ],
+        "modifiers": [],
+        "value": null
+      },
+      {
+        "name": "AK-97",
+        "category": "WEAPON",
+        "tags": [
+          { "label": "Type", "text": "fusil d’assaut" },
+          { "label": "VD", "text": "7" }
+        ],
+        "modifiers": [],
+        "value": null
+      },
+      {
+        "name": "Baïonnette (couteau)",
+        "category": "WEAPON",
+        "tags": [
+          { "label": "Type", "text": "lame" },
+          { "label": "VD", "text": "4" }
+        ],
+        "modifiers": [],
+        "value": null
+      },
+      {
+        "name": "Baïonnette (montée sur AK-97)",
+        "category": "WEAPON",
+        "tags": [
+          { "label": "Type", "text": "lame" },
+          { "label": "VD", "text": "5" }
+        ],
+        "modifiers": [],
+        "value": null
+      }
+    ]
+  },
+  "magic": {
+    "awakened": true,
+    "knownSpells": [],
+    "spirits": [{ "label": "Mentor", "text": "Capybara" }]
+  },
+  "network": { "contacts": [] },
+  "defense": {
+    "armorPrimary": 3,
+    "thresholdNotes": [
+      { "label": "Physique sans armure", "text": "3 / 6 / 9" },
+      { "label": "Physique avec veste pare-balle 3", "text": "6 / 9 / 12" },
+      { "label": "Mental", "text": "3 / 6 / 9" }
+    ]
+  },
+  "damage": {
+    "physical": "OK",
+    "mental": "OK",
+    "matrix": "OK",
+    "vehicle": "OK",
+    "stabilized": false
+  }
+}
