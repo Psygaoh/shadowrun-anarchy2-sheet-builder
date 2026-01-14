@@ -2,15 +2,18 @@ import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { AuthService } from '../auth/auth.service';
+import { ThemeSwitcherComponent } from './theme-switcher.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink, ThemeSwitcherComponent],
   template: `
     <header class="header">
       <a class="brand" routerLink="/">Shadowrun Sheet Builder</a>
 
       <div class="spacer"></div>
+
+      <app-theme-switcher />
 
       @if (user()) {
         <div class="user">
@@ -30,14 +33,16 @@ import { AuthService } from '../auth/auth.service';
         display: flex;
         align-items: center;
         gap: 1rem;
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid #e6e6e6;
+        padding: 1.1rem 1.8rem;
+        border-bottom: 1px solid var(--header-app-border);
+        background: var(--header-app-bg);
+        backdrop-filter: blur(var(--header-blur));
       }
 
       .brand {
         font-weight: 700;
         text-decoration: none;
-        color: #1d1d1d;
+        color: hsl(var(--foreground));
       }
 
       .spacer {
@@ -53,28 +58,11 @@ import { AuthService } from '../auth/auth.service';
 
       .label {
         font-size: 0.75rem;
-        color: #666;
+        color: hsl(var(--muted-foreground));
       }
 
       .value {
         font-weight: 600;
-      }
-
-      .button {
-        border: none;
-        border-radius: 999px;
-        padding: 0.6rem 1.2rem;
-        background: #111827;
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-        font-weight: 600;
-      }
-
-      .button.ghost {
-        background: transparent;
-        color: #111827;
-        border: 1px solid #111827;
       }
     `,
   ],

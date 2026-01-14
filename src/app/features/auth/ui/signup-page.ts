@@ -72,9 +72,10 @@ import { AuthService } from '../../../core/auth/auth.service';
         flex-direction: column;
         gap: 1rem;
         padding: 1.5rem;
-        border: 1px solid #e6e6e6;
-        border-radius: 16px;
-        background: #fff;
+        border: 1px solid hsl(var(--border));
+        border-radius: var(--radius);
+        background: hsl(var(--card));
+        box-shadow: 0 24px 60px var(--feature-card-shadow);
       }
 
       label {
@@ -86,28 +87,20 @@ import { AuthService } from '../../../core/auth/auth.service';
 
       input {
         padding: 0.6rem 0.8rem;
-        border-radius: 10px;
-        border: 1px solid #cbd5e1;
-      }
-
-      .button {
-        border: none;
-        border-radius: 999px;
-        padding: 0.6rem 1.2rem;
-        background: #111827;
-        color: #fff;
-        cursor: pointer;
-        font-weight: 600;
+        border-radius: calc(var(--radius) - 6px);
+        border: 1px solid hsl(var(--input));
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
       }
 
       .error {
-        color: #b91c1c;
+        color: hsl(var(--destructive));
         font-weight: 600;
       }
 
       .muted {
         margin-top: 1rem;
-        color: #6b7280;
+        color: hsl(var(--muted-foreground));
       }
     `,
   ],

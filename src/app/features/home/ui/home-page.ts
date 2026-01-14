@@ -39,8 +39,30 @@ import { AuthService } from '../../../core/auth/auth.service';
         gap: 2rem;
         padding: 2.5rem;
         border-radius: 24px;
-        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-        border: 1px solid #e2e8f0;
+        background: linear-gradient(
+          135deg,
+          hsl(var(--card)),
+          rgba(var(--glow-primary-rgb), var(--glow-primary-alpha))
+        );
+        border: 1px solid var(--feature-card-border);
+        box-shadow: 0 24px 60px var(--feature-card-shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: var(--feature-card-overlay);
+        pointer-events: none;
+        opacity: 0.8;
+        z-index: 0;
+      }
+
+      .hero > * {
+        position: relative;
+        z-index: 1;
       }
 
       .cta {
@@ -49,25 +71,9 @@ import { AuthService } from '../../../core/auth/auth.service';
         flex-wrap: wrap;
       }
 
-      .button {
-        border: none;
-        border-radius: 999px;
-        padding: 0.7rem 1.4rem;
-        background: #111827;
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-        font-weight: 600;
-      }
-
-      .button.ghost {
-        background: transparent;
-        color: #111827;
-        border: 1px solid #111827;
-      }
-
       .welcome {
         font-weight: 600;
+        color: hsl(var(--foreground));
       }
     `,
   ],

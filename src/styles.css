@@ -1,1 +1,556 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Space Grotesk', 'Rajdhani', system-ui, sans-serif;
+  background: linear-gradient(
+    180deg,
+    var(--backdrop-top),
+    var(--backdrop-middle) 45%,
+    var(--backdrop-bottom)
+  );
+  color: hsl(var(--foreground));
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--footer-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--footer-link-hover);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Rajdhani', 'Space Grotesk', sans-serif;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.8rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.button {
+  border: 1px solid rgba(var(--glow-primary-rgb), 0.4);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(
+    120deg,
+    var(--cta-primary-start),
+    var(--cta-primary-mid),
+    var(--cta-primary-end)
+  );
+  color: var(--cta-primary-text);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 0 24px var(--cta-primary-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 32px var(--cta-primary-shadow);
+}
+
+.button.ghost {
+  background: var(--cta-secondary-bg);
+  color: var(--cta-secondary-text);
+  border: 1px solid var(--cta-secondary-border);
+  box-shadow: none;
+}
+
+.button.ghost:hover {
+  background: var(--cta-secondary-hover-bg);
+  color: var(--cta-secondary-hover-text);
+  border-color: var(--cta-secondary-hover-border);
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+:root {
+  --radius: 16px;
+}
+
+.theme-sr4 {
+  color-scheme: dark;
+  --background: 215 65% 5%;
+  --foreground: 210 20% 97%;
+  --card: 215 45% 8%;
+  --card-foreground: 210 20% 97%;
+  --popover: 215 45% 8%;
+  --popover-foreground: 210 20% 97%;
+  --primary: 186 85% 60%;
+  --primary-foreground: 215 65% 5%;
+  --secondary: 233 38% 20%;
+  --secondary-foreground: 210 20% 97%;
+  --muted: 220 30% 12%;
+  --muted-foreground: 215 15% 70%;
+  --accent: 196 80% 50%;
+  --accent-foreground: 215 65% 5%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 215 30% 18%;
+  --input: 215 30% 16%;
+  --ring: 186 85% 60%;
+  --radius: 18px;
+  --chart-1: 186 85% 60%;
+  --chart-2: 200 88% 56%;
+  --chart-3: 275 82% 65%;
+  --chart-4: 162 82% 45%;
+  --chart-5: 32 94% 46%;
+  --primary-rgb: 34 211 238;
+  --brand-weak: rgba(34, 211, 238, 0.75);
+  --brand-strong: rgba(34, 211, 238, 1);
+  --label-color: rgba(34, 211, 238, 0.78);
+  --cta-primary-start: #22d3ee;
+  --cta-primary-mid: #38bdf8;
+  --cta-primary-end: #a855f7;
+  --cta-primary-hover-start: #38bdf8;
+  --cta-primary-hover-mid: #60a5fa;
+  --cta-primary-hover-end: #c084fc;
+  --cta-primary-shadow: rgba(34, 211, 238, 0.45);
+  --cta-primary-text: #03111c;
+  --cta-secondary-border: rgba(34, 211, 238, 0.5);
+  --cta-secondary-hover-border: rgba(34, 211, 238, 0.9);
+  --cta-secondary-bg: rgba(2, 8, 23, 0.4);
+  --cta-secondary-hover-bg: rgba(34, 211, 238, 0.12);
+  --cta-secondary-text: rgba(224, 248, 255, 0.9);
+  --cta-secondary-hover-text: #e0f2fe;
+  --feature-card-border: rgba(34, 211, 238, 0.2);
+  --feature-card-bg: rgba(2, 8, 23, 0.6);
+  --feature-card-shadow: rgba(34, 211, 238, 0.2);
+  --feature-card-overlay: radial-gradient(circle at top, rgba(56, 189, 248, 0.3), transparent 60%);
+  --footer-link: rgba(224, 248, 255, 0.8);
+  --footer-link-hover: #e0f2fe;
+  --header-landing-bg: rgba(2, 8, 23, 0.72);
+  --header-landing-border: rgba(34, 211, 238, 0.15);
+  --header-app-bg: rgba(2, 8, 23, 0.72);
+  --header-app-border: rgba(34, 211, 238, 0.15);
+  --header-blur: 18px;
+  --footer-landing-bg: rgba(2, 8, 23, 0.65);
+  --footer-landing-border: rgba(34, 211, 238, 0.18);
+  --footer-app-bg: rgba(2, 8, 23, 0.72);
+  --footer-app-border: rgba(34, 211, 238, 0.2);
+  --glow-primary-rgb: 34 211 238;
+  --glow-primary-alpha: 0.32;
+  --glow-primary-blur: 38px;
+  --glow-secondary-rgb: 168 85 247;
+  --glow-secondary-alpha: 0.22;
+  --glow-secondary-blur: 46px;
+  --grid-primary-rgb: 56 189 248;
+  --grid-primary-alpha: 0.05;
+  --grid-secondary-rgb: 168 85 247;
+  --grid-secondary-alpha: 0.04;
+  --backdrop-top: #020817;
+  --backdrop-middle: #030a1f;
+  --backdrop-bottom: #00040b;
+  --backdrop-bottom-rgb: 0 4 11;
+  --backdrop-bottom-alpha: 0.92;
+}
+
+.theme-sr5 {
+  color-scheme: dark;
+  --background: 345 70% 4%;
+  --foreground: 350 25% 96%;
+  --card: 345 50% 7%;
+  --card-foreground: 350 25% 96%;
+  --popover: 345 50% 7%;
+  --popover-foreground: 350 25% 96%;
+  --primary: 349 86% 55%;
+  --primary-foreground: 345 70% 4%;
+  --secondary: 26 94% 45%;
+  --secondary-foreground: 350 25% 96%;
+  --muted: 350 35% 10%;
+  --muted-foreground: 350 15% 70%;
+  --accent: 18 85% 55%;
+  --accent-foreground: 345 70% 4%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 345 35% 14%;
+  --input: 345 35% 12%;
+  --ring: 349 86% 55%;
+  --radius: 18px;
+  --chart-1: 349 86% 55%;
+  --chart-2: 26 94% 45%;
+  --chart-3: 14 90% 60%;
+  --chart-4: 44 92% 60%;
+  --chart-5: 200 88% 56%;
+  --primary-rgb: 244 63 94;
+  --brand-weak: rgba(244, 63, 94, 0.78);
+  --brand-strong: rgba(244, 63, 94, 1);
+  --label-color: rgba(244, 63, 94, 0.82);
+  --cta-primary-start: #f43f5e;
+  --cta-primary-mid: #fb7185;
+  --cta-primary-end: #f97316;
+  --cta-primary-hover-start: #fb7185;
+  --cta-primary-hover-mid: #fb923c;
+  --cta-primary-hover-end: #facc15;
+  --cta-primary-shadow: rgba(244, 63, 94, 0.45);
+  --cta-primary-text: #22000f;
+  --cta-secondary-border: rgba(244, 63, 94, 0.5);
+  --cta-secondary-hover-border: rgba(244, 63, 94, 0.9);
+  --cta-secondary-bg: rgba(20, 0, 9, 0.4);
+  --cta-secondary-hover-bg: rgba(244, 63, 94, 0.12);
+  --cta-secondary-text: rgba(255, 235, 240, 0.9);
+  --cta-secondary-hover-text: #ffe4e6;
+  --feature-card-border: rgba(244, 63, 94, 0.2);
+  --feature-card-bg: rgba(20, 0, 9, 0.6);
+  --feature-card-shadow: rgba(244, 63, 94, 0.24);
+  --feature-card-overlay: radial-gradient(circle at top, rgba(251, 113, 133, 0.3), transparent 60%);
+  --footer-link: rgba(255, 231, 235, 0.8);
+  --footer-link-hover: #ffe4e6;
+  --header-landing-bg: rgba(20, 0, 9, 0.72);
+  --header-landing-border: rgba(244, 63, 94, 0.18);
+  --header-app-bg: rgba(20, 0, 9, 0.72);
+  --header-app-border: rgba(244, 63, 94, 0.18);
+  --header-blur: 18px;
+  --footer-landing-bg: rgba(20, 0, 9, 0.65);
+  --footer-landing-border: rgba(244, 63, 94, 0.2);
+  --footer-app-bg: rgba(20, 0, 9, 0.72);
+  --footer-app-border: rgba(244, 63, 94, 0.2);
+  --glow-primary-rgb: 244 63 94;
+  --glow-primary-alpha: 0.35;
+  --glow-primary-blur: 38px;
+  --glow-secondary-rgb: 251 191 36;
+  --glow-secondary-alpha: 0.24;
+  --glow-secondary-blur: 46px;
+  --grid-primary-rgb: 251 113 133;
+  --grid-primary-alpha: 0.05;
+  --grid-secondary-rgb: 249 115 22;
+  --grid-secondary-alpha: 0.04;
+  --backdrop-top: #140009;
+  --backdrop-middle: #1f0012;
+  --backdrop-bottom: #080003;
+  --backdrop-bottom-rgb: 8 0 3;
+  --backdrop-bottom-alpha: 0.92;
+}
+
+.theme-sr6 {
+  color-scheme: dark;
+  --background: 264 68% 5%;
+  --foreground: 268 40% 95%;
+  --card: 264 52% 8%;
+  --card-foreground: 268 40% 95%;
+  --popover: 264 52% 8%;
+  --popover-foreground: 268 40% 95%;
+  --primary: 275 82% 65%;
+  --primary-foreground: 264 68% 5%;
+  --secondary: 200 88% 56%;
+  --secondary-foreground: 268 40% 95%;
+  --muted: 264 30% 12%;
+  --muted-foreground: 268 15% 70%;
+  --accent: 220 90% 60%;
+  --accent-foreground: 264 68% 5%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 264 30% 18%;
+  --input: 264 30% 16%;
+  --ring: 275 82% 65%;
+  --radius: 18px;
+  --chart-1: 275 82% 65%;
+  --chart-2: 200 88% 56%;
+  --chart-3: 186 85% 60%;
+  --chart-4: 162 82% 45%;
+  --chart-5: 32 94% 46%;
+  --primary-rgb: 192 132 252;
+  --brand-weak: rgba(192, 132, 252, 0.78);
+  --brand-strong: rgba(192, 132, 252, 1);
+  --label-color: rgba(192, 132, 252, 0.82);
+  --cta-primary-start: #c084fc;
+  --cta-primary-mid: #a855f7;
+  --cta-primary-end: #3b82f6;
+  --cta-primary-hover-start: #a855f7;
+  --cta-primary-hover-mid: #818cf8;
+  --cta-primary-hover-end: #22d3ee;
+  --cta-primary-shadow: rgba(192, 132, 252, 0.45);
+  --cta-primary-text: #130027;
+  --cta-secondary-border: rgba(192, 132, 252, 0.5);
+  --cta-secondary-hover-border: rgba(192, 132, 252, 0.9);
+  --cta-secondary-bg: rgba(11, 2, 23, 0.4);
+  --cta-secondary-hover-bg: rgba(192, 132, 252, 0.12);
+  --cta-secondary-text: rgba(243, 232, 255, 0.9);
+  --cta-secondary-hover-text: #ede9fe;
+  --feature-card-border: rgba(192, 132, 252, 0.2);
+  --feature-card-bg: rgba(11, 2, 23, 0.6);
+  --feature-card-shadow: rgba(192, 132, 252, 0.24);
+  --feature-card-overlay: radial-gradient(circle at top, rgba(168, 85, 247, 0.35), transparent 60%);
+  --footer-link: rgba(241, 235, 255, 0.8);
+  --footer-link-hover: #ede9fe;
+  --header-landing-bg: rgba(11, 2, 23, 0.72);
+  --header-landing-border: rgba(192, 132, 252, 0.18);
+  --header-app-bg: rgba(11, 2, 23, 0.72);
+  --header-app-border: rgba(192, 132, 252, 0.18);
+  --header-blur: 18px;
+  --footer-landing-bg: rgba(11, 2, 23, 0.65);
+  --footer-landing-border: rgba(192, 132, 252, 0.2);
+  --footer-app-bg: rgba(11, 2, 23, 0.72);
+  --footer-app-border: rgba(192, 132, 252, 0.2);
+  --glow-primary-rgb: 192 132 252;
+  --glow-primary-alpha: 0.32;
+  --glow-primary-blur: 38px;
+  --glow-secondary-rgb: 59 130 246;
+  --glow-secondary-alpha: 0.24;
+  --glow-secondary-blur: 46px;
+  --grid-primary-rgb: 129 140 248;
+  --grid-primary-alpha: 0.05;
+  --grid-secondary-rgb: 59 130 246;
+  --grid-secondary-alpha: 0.04;
+  --backdrop-top: #0b0217;
+  --backdrop-middle: #120329;
+  --backdrop-bottom: #050111;
+  --backdrop-bottom-rgb: 5 1 17;
+  --backdrop-bottom-alpha: 0.92;
+}
+
+.theme-darkAnarchy {
+  color-scheme: dark;
+  --background: 222 45% 2.3%;
+  --foreground: 48 90% 88%;
+  --card: 222 35% 6%;
+  --card-foreground: 48 90% 88%;
+  --popover: 222 35% 6%;
+  --popover-foreground: 48 90% 88%;
+  --primary: 48 100% 52%;
+  --primary-foreground: 222 45% 2.3%;
+  --secondary: 32 94% 46%;
+  --secondary-foreground: 48 90% 88%;
+  --muted: 222 20% 10%;
+  --muted-foreground: 48 10% 70%;
+  --accent: 32 94% 46%;
+  --accent-foreground: 222 45% 2.3%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 222 20% 14%;
+  --input: 222 20% 12%;
+  --ring: 48 100% 52%;
+  --radius: 18px;
+  --chart-1: 48 100% 52%;
+  --chart-2: 32 94% 46%;
+  --chart-3: 349 86% 55%;
+  --chart-4: 26 94% 45%;
+  --chart-5: 200 88% 56%;
+  --primary-rgb: 250 204 21;
+  --brand-weak: rgba(250, 204, 21, 0.75);
+  --brand-strong: rgba(250, 204, 21, 1);
+  --label-color: rgba(250, 204, 21, 0.78);
+  --cta-primary-start: #facc15;
+  --cta-primary-mid: #f59e0b;
+  --cta-primary-end: #fef08a;
+  --cta-primary-hover-start: #f59e0b;
+  --cta-primary-hover-mid: #fbbf24;
+  --cta-primary-hover-end: #fde68a;
+  --cta-primary-shadow: rgba(250, 204, 21, 0.5);
+  --cta-primary-text: #1f1a00;
+  --cta-secondary-border: rgba(250, 204, 21, 0.5);
+  --cta-secondary-hover-border: rgba(250, 204, 21, 0.9);
+  --cta-secondary-bg: rgba(10, 7, 3, 0.4);
+  --cta-secondary-hover-bg: rgba(250, 204, 21, 0.14);
+  --cta-secondary-text: rgba(255, 248, 200, 0.9);
+  --cta-secondary-hover-text: #fef9c3;
+  --feature-card-border: rgba(250, 204, 21, 0.2);
+  --feature-card-bg: rgba(10, 7, 3, 0.6);
+  --feature-card-shadow: rgba(250, 204, 21, 0.26);
+  --feature-card-overlay: radial-gradient(circle at top, rgba(250, 204, 21, 0.25), transparent 60%);
+  --footer-link: rgba(255, 249, 199, 0.85);
+  --footer-link-hover: #fef9c3;
+  --header-landing-bg: rgba(10, 7, 3, 0.72);
+  --header-landing-border: rgba(250, 204, 21, 0.18);
+  --header-app-bg: rgba(10, 7, 3, 0.72);
+  --header-app-border: rgba(250, 204, 21, 0.18);
+  --header-blur: 18px;
+  --footer-landing-bg: rgba(10, 7, 3, 0.65);
+  --footer-landing-border: rgba(250, 204, 21, 0.2);
+  --footer-app-bg: rgba(10, 7, 3, 0.72);
+  --footer-app-border: rgba(250, 204, 21, 0.2);
+  --glow-primary-rgb: 250 204 21;
+  --glow-primary-alpha: 0.38;
+  --glow-primary-blur: 38px;
+  --glow-secondary-rgb: 249 115 22;
+  --glow-secondary-alpha: 0.22;
+  --glow-secondary-blur: 46px;
+  --grid-primary-rgb: 250 204 21;
+  --grid-primary-alpha: 0.06;
+  --grid-secondary-rgb: 249 115 22;
+  --grid-secondary-alpha: 0.04;
+  --backdrop-top: #0a0703;
+  --backdrop-middle: #130f05;
+  --backdrop-bottom: #040301;
+  --backdrop-bottom-rgb: 4 3 1;
+  --backdrop-bottom-alpha: 0.94;
+}
+
+.theme-matrix {
+  color-scheme: dark;
+  --background: 140 58% 3%;
+  --foreground: 140 28% 92%;
+  --card: 140 38% 6%;
+  --card-foreground: 140 28% 92%;
+  --popover: 140 38% 6%;
+  --popover-foreground: 140 28% 92%;
+  --primary: 141 100% 50%;
+  --primary-foreground: 140 58% 3%;
+  --secondary: 162 82% 45%;
+  --secondary-foreground: 140 28% 92%;
+  --muted: 140 20% 10%;
+  --muted-foreground: 140 10% 68%;
+  --accent: 168 90% 45%;
+  --accent-foreground: 140 58% 3%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 140 20% 14%;
+  --input: 140 20% 12%;
+  --ring: 141 100% 50%;
+  --radius: 18px;
+  --chart-1: 141 100% 50%;
+  --chart-2: 162 82% 45%;
+  --chart-3: 186 85% 60%;
+  --chart-4: 200 88% 56%;
+  --chart-5: 32 94% 46%;
+  --primary-rgb: 101 255 134;
+  --brand-weak: rgba(101, 255, 134, 0.78);
+  --brand-strong: rgba(101, 255, 134, 1);
+  --label-color: rgba(101, 255, 134, 0.78);
+  --cta-primary-start: #22ff71;
+  --cta-primary-mid: #32e875;
+  --cta-primary-end: #0ea5e9;
+  --cta-primary-hover-start: #32e875;
+  --cta-primary-hover-mid: #0ea5e9;
+  --cta-primary-hover-end: #22d3ee;
+  --cta-primary-shadow: rgba(34, 255, 140, 0.4);
+  --cta-primary-text: #00210f;
+  --cta-secondary-border: rgba(101, 255, 134, 0.5);
+  --cta-secondary-hover-border: rgba(101, 255, 134, 0.9);
+  --cta-secondary-bg: rgba(2, 13, 7, 0.4);
+  --cta-secondary-hover-bg: rgba(101, 255, 134, 0.12);
+  --cta-secondary-text: rgba(208, 255, 220, 0.9);
+  --cta-secondary-hover-text: #bbf7d0;
+  --feature-card-border: rgba(101, 255, 134, 0.2);
+  --feature-card-bg: rgba(2, 13, 7, 0.6);
+  --feature-card-shadow: rgba(34, 255, 140, 0.26);
+  --feature-card-overlay: radial-gradient(circle at top, rgba(50, 232, 117, 0.25), transparent 60%);
+  --footer-link: rgba(196, 255, 219, 0.85);
+  --footer-link-hover: #bbf7d0;
+  --header-landing-bg: rgba(2, 13, 7, 0.72);
+  --header-landing-border: rgba(101, 255, 134, 0.18);
+  --header-app-bg: rgba(2, 13, 7, 0.72);
+  --header-app-border: rgba(101, 255, 134, 0.18);
+  --header-blur: 18px;
+  --footer-landing-bg: rgba(2, 13, 7, 0.65);
+  --footer-landing-border: rgba(101, 255, 134, 0.2);
+  --footer-app-bg: rgba(2, 13, 7, 0.72);
+  --footer-app-border: rgba(101, 255, 134, 0.2);
+  --glow-primary-rgb: 34 255 140;
+  --glow-primary-alpha: 0.35;
+  --glow-primary-blur: 38px;
+  --glow-secondary-rgb: 14 197 222;
+  --glow-secondary-alpha: 0.18;
+  --glow-secondary-blur: 46px;
+  --grid-primary-rgb: 34 255 140;
+  --grid-primary-alpha: 0.05;
+  --grid-secondary-rgb: 14 197 222;
+  --grid-secondary-alpha: 0.04;
+  --backdrop-top: #020d07;
+  --backdrop-middle: #04140a;
+  --backdrop-bottom: #010604;
+  --backdrop-bottom-rgb: 1 6 4;
+  --backdrop-bottom-alpha: 0.92;
+}
+
+.theme-lightAnarchy {
+  color-scheme: light;
+  --background: 47 40% 96%;
+  --foreground: 330 45% 26%;
+  --card: 45 30% 98%;
+  --card-foreground: 330 45% 26%;
+  --popover: 45 30% 98%;
+  --popover-foreground: 330 45% 26%;
+  --primary: 330 74% 62%;
+  --primary-foreground: 330 45% 20%;
+  --secondary: 44 92% 60%;
+  --secondary-foreground: 330 45% 26%;
+  --muted: 45 20% 90%;
+  --muted-foreground: 330 15% 40%;
+  --accent: 330 74% 62%;
+  --accent-foreground: 330 45% 20%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 45 20% 82%;
+  --input: 45 20% 85%;
+  --ring: 330 74% 62%;
+  --radius: 18px;
+  --chart-1: 330 74% 62%;
+  --chart-2: 44 92% 60%;
+  --chart-3: 48 100% 52%;
+  --chart-4: 26 94% 45%;
+  --chart-5: 200 88% 56%;
+  --primary-rgb: 236 72 153;
+  --brand-weak: rgba(236, 72, 153, 0.8);
+  --brand-strong: rgba(236, 72, 153, 1);
+  --label-color: rgba(236, 72, 153, 0.75);
+  --cta-primary-start: #f5a3c7;
+  --cta-primary-mid: #f5ce69;
+  --cta-primary-end: #ffe1a6;
+  --cta-primary-hover-start: #f5ce69;
+  --cta-primary-hover-mid: #ffe1a6;
+  --cta-primary-hover-end: #fbcfe8;
+  --cta-primary-shadow: rgba(236, 72, 153, 0.25);
+  --cta-primary-text: #3f1024;
+  --cta-secondary-border: rgba(236, 72, 153, 0.35);
+  --cta-secondary-hover-border: rgba(236, 72, 153, 0.6);
+  --cta-secondary-bg: rgba(255, 255, 255, 0.7);
+  --cta-secondary-hover-bg: rgba(236, 72, 153, 0.12);
+  --cta-secondary-text: #7c2d4f;
+  --cta-secondary-hover-text: #9d174d;
+  --feature-card-border: rgba(236, 72, 153, 0.2);
+  --feature-card-bg: rgba(255, 255, 255, 0.8);
+  --feature-card-shadow: rgba(236, 72, 153, 0.16);
+  --feature-card-overlay: radial-gradient(circle at top, rgba(236, 72, 153, 0.15), transparent 60%);
+  --footer-link: rgba(124, 45, 79, 0.85);
+  --footer-link-hover: #9d174d;
+  --header-landing-bg: rgba(255, 255, 255, 0.78);
+  --header-landing-border: rgba(236, 72, 153, 0.18);
+  --header-app-bg: rgba(255, 255, 255, 0.78);
+  --header-app-border: rgba(236, 72, 153, 0.18);
+  --header-blur: 18px;
+  --footer-landing-bg: rgba(255, 255, 255, 0.7);
+  --footer-landing-border: rgba(236, 72, 153, 0.18);
+  --footer-app-bg: rgba(255, 255, 255, 0.78);
+  --footer-app-border: rgba(236, 72, 153, 0.18);
+  --glow-primary-rgb: 236 72 153;
+  --glow-primary-alpha: 0.18;
+  --glow-primary-blur: 38px;
+  --glow-secondary-rgb: 250 204 21;
+  --glow-secondary-alpha: 0.16;
+  --glow-secondary-blur: 46px;
+  --grid-primary-rgb: 236 72 153;
+  --grid-primary-alpha: 0.04;
+  --grid-secondary-rgb: 250 204 21;
+  --grid-secondary-alpha: 0.04;
+  --backdrop-top: #fdfaf5;
+  --backdrop-middle: #fffdfc;
+  --backdrop-bottom: #fbe7f2;
+  --backdrop-bottom-rgb: 251 231 242;
+  --backdrop-bottom-alpha: 0.9;
+}
