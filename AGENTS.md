@@ -16,6 +16,8 @@ Guidelines for this Angular 21 app connected to Supabase and hosted on Vercel. K
 - Keep modules and components small and focused; delete dead code.
 - Document non-obvious decisions in code comments or README updates.
 - Avoid breaking changes without a migration plan.
+- Always clean up after yourself (remove temp scripts, unused files, and dead config).
+- Follow gitflow: create a feature branch, work and commit there, then open a merge request for approval.
 
 ## Angular 21 conventions
 - Use standalone components by default.
