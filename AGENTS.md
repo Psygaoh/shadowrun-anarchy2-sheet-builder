@@ -3,6 +3,14 @@
 ## Purpose
 Guidelines for this Angular 21 app connected to Supabase and hosted on Vercel. Keep changes small, testable, and aligned with existing patterns.
 
+## References
+- Angular v21 docs: https://angular.dev/
+- Angular configuration: https://angular.dev/reference/configs
+- Supabase Angular tutorial: https://supabase.com/docs/guides/getting-started/tutorials/with-angular
+- Supabase JS client: https://supabase.com/docs/reference/javascript/installing
+- Vercel Angular docs: https://vercel.com/docs/frameworks/angular
+- Vercel environment variables: https://vercel.com/docs/projects/environment-variables
+
 ## General practices
 - Prefer simple, explicit code over cleverness.
 - Keep modules and components small and focused; delete dead code.
