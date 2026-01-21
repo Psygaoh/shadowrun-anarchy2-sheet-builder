@@ -59,6 +59,7 @@ Guidelines for this Angular 21 app connected to Supabase and hosted on Vercel. K
 ## Testing and quality
 - Add unit tests for critical logic and edge cases.
 - Add an e2e smoke test for auth and key flows.
+- RUN LINT / compiler and fix errors.
 - Run lint + tests before pushing changes.
 
 ## Performance

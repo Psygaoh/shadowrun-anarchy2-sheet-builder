@@ -92,7 +92,7 @@ Metatype
 text
 Copier le code
 AttributeName
-- FORCE | AGILITY | VOLONTE | LOGIQUE | CHARISME
+- FORCE | AGILITY | VOLONTE | LOGIQUE | CHARISME | ANARCHY_MAX
 text
 Copier le code
 SkillName
@@ -191,7 +191,6 @@ character_resource
 - character_id     : UUID (FK)
 - cash             : bigint
 - anarchy_current  : int
-- anarchy_max_base : int
 - essence_current  : int
 - essence_max      : int
 9. Qualities & Modifiers

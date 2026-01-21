@@ -12,6 +12,37 @@ export class CharacterService {
     return fetchMany(request);
   }
 
+  async search({
+    name,
+    playerId,
+    characterId,
+  }: {
+    name?: string;
+    playerId?: string;
+    characterId?: string;
+  }): Promise<Character[]> {
+    let request = this.supabase.client.from('character').select('*').order('created_at');
+    const trimmedName = name?.trim();
+    const trimmedPlayerId = playerId?.trim();
+    const trimmedCharacterId = characterId?.trim();
+
+    if (trimmedName) {
+      request = request.or(
+        `street_name.ilike.%${trimmedName}%,legal_name.ilike.%${trimmedName}%`
+      );
+    }
+
+    if (trimmedPlayerId) {
+      request = request.eq('user_id', trimmedPlayerId);
+    }
+
+    if (trimmedCharacterId) {
+      request = request.eq('id', trimmedCharacterId);
+    }
+
+    return fetchMany(request);
+  }
+
   async get(id: string): Promise<Character> {
     const request = this.supabase.client.from('character').select('*').eq('id', id).single();
     return fetchOne(request);

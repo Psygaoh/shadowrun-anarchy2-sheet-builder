@@ -1,6 +1,12 @@
 export type Metatype = 'HUMAN' | 'ELF' | 'DWARF' | 'ORK' | 'TROLL';
 
-export type AttributeName = 'FORCE' | 'AGILITY' | 'VOLONTE' | 'LOGIQUE' | 'CHARISME';
+export type AttributeName =
+  | 'FORCE'
+  | 'AGILITY'
+  | 'VOLONTE'
+  | 'LOGIQUE'
+  | 'CHARISME'
+  | 'ANARCHY_MAX';
 
 export type SkillName =
   | 'ATHLETISME'
@@ -100,7 +106,6 @@ export interface CharacterResource {
   character_id: string;
   cash: number | null;
   anarchy_current: number | null;
-  anarchy_max_base: number | null;
   essence_current: number | null;
   essence_max: number | null;
   created_at: string;
