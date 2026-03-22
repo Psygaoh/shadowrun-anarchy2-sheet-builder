@@ -2,6 +2,22 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
 
+
+## Planning documents
+
+To keep execution aligned, use these docs together:
+
+- `goal.md` — project outcome, phases, and success criteria.
+- `agent.md` — execution checklist and sequencing for the next implementation steps.
+
+## Current styling status
+
+The app currently uses a CSS-variable theme system defined in `src/styles.css`.
+Tailwind is not yet configured in this repository (no Tailwind/PostCSS config files present).
+
+If you only see a purple-heavy screen, start at `/` and verify the header + hero content are visible; the
+background palette is intentionally neon/dark and may need token tuning rather than framework changes.
+
 ## Development server
 
 To start a local development server, run:
