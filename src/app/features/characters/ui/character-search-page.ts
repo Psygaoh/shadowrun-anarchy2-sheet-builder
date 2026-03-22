@@ -137,8 +137,7 @@ import { AuthService } from '../../../core/auth/auth.service';
           <ul>
             @for (quality of selectedSheet()!.qualities; track quality.id) {
               <li>
-                {{ quality.name }} ({{ quality.source || 'Unknown' }}) · Level
-                {{ quality.level ?? 0 }}
+                {{ quality.name }} ({{ quality.source || 'Unknown' }})
                 <span class="muted">{{ formatNotes(quality.notes) }}</span>
               </li>
             }

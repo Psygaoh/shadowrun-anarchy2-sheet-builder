@@ -9,7 +9,10 @@ import { ThemeSwitcherComponent } from './theme-switcher.component';
   imports: [RouterLink, ThemeSwitcherComponent],
   template: `
     <header class="header">
-      <a class="brand" routerLink="/">Shadowrun Sheet Builder</a>
+      <a class="brand" routerLink="/">
+        <span class="brand-title">Shadowrun Sheet Builder</span>
+        <span class="brand-subtitle">Shadowrun Anarchy</span>
+      </a>
 
       <div class="spacer"></div>
 
@@ -40,9 +43,23 @@ import { ThemeSwitcherComponent } from './theme-switcher.component';
       }
 
       .brand {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.15rem;
         font-weight: 700;
         text-decoration: none;
         color: hsl(var(--foreground));
+      }
+
+      .brand-title {
+        line-height: 1;
+      }
+
+      .brand-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: color-mix(in srgb, hsl(var(--foreground)) 72%, hsl(var(--background)));
       }
 
       .spacer {
